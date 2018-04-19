@@ -1,3 +1,21 @@
+from django.conf.urls import url
+from django.contrib import admin
+
+from .views import home_page , about_page, contact_page , login_page, register_page
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^$',home_page),
+    url(r'^about/$',about_page),
+    url(r'^contact/$',contact_page),
+    url(r'^login/$',login_page),
+    url(r'^register/$',register_page),
+]
+
+
+
+
+
 """ecommerce URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -13,15 +31,3 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
-from django.contrib import admin
-
-from .views import home_page , about_page, contact_page , login_page
-
-urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$',home_page),
-    url(r'^about/$',about_page),
-    url(r'^contact/$',contact_page),
-    url(r'^login/$',login_page),
-]
